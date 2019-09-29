@@ -42,6 +42,9 @@ public class GenericMethods {
 		}else if(type.equals("xpath")){
 			element = driver.findElement(By.xpath(locator));
 		}
+		else if(type.equals("linkText")){
+			element = driver.findElement(By.linkText(locator));
+		}
 		if(checkSingleEntry(locator, type)){
 			System.out.println("Element Found and Returned");
 			return element;
@@ -65,6 +68,9 @@ public class GenericMethods {
 			return driver.findElements(By.xpath(locator));
 		}else if(type.equals("class")){
 			return driver.findElements(By.className(locator));
+		}
+		else if(type.equals("linkText")){
+			return driver.findElements(By.linkText(locator));
 		}// other TODO 
 		return null;
 	}
